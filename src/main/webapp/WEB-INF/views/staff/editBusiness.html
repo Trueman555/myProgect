@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fill the result of the day</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/staff/indexBusiness/{id_day}(id_day=${dayBusiness.getId_day()})}" th:object="${dayBusiness}">
+    <label for="productsPerDay">Enter amount of production </label>
+    <input type="text" th:field="*{productsPerDay}" id="productsPerDay"/>
+
+<!--    <br/>-->
+<!--    <label for="products_per_day">Enter name: </label>-->
+<!--    <input type="text" th:field="*{productsPerDay}" id="products_per_day"/>-->
+
+
+    <br/>
+
+
+    <br/>
+
+
+    <br/>
+    <input type="submit" value="Update!"/>
+</form>
+</body>
+</html>

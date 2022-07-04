@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class = "staff" id = "staff_id">
+    <thead>
+    <tr>
+        <th class = "staff">FIO</th>
+        <th class = "staff">Experiance</th>
+        <th class = "staff">Post</th>
+        <th class = "staff">WorkShop</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="orgStaff : ${staff}">
+        <td th:href="@{/staff/{staff_id}(staff_id=${orgStaff.getStaff_id()})}"
+               th:text="${orgStaff.getNameSurname() }">user></td>
+        <td>
+            <table>
+                <tbody>
+                <tr th:href="@{/staff/{staff_id}(staff_id=${orgStaff.getStaff_id()})}">
+
+                    <td  th:text="${orgStaff.getExperiance() }">user> </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </td>
+        <td>
+            <table>
+                <tbody>
+                <tr th:href="@{/staff/{staff_id}(staff_id=${orgStaff.getStaff_id()})}">
+
+                    <td  th:text="${orgStaff.getId_posts() }">user> </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </td>
+        <td>
+            <table>
+                <tbody>
+                <tr th:href="@{/staff/{staff_id}(staff_id=${orgStaff.getStaff_id()})}">
+
+                    <td  th:text="${orgStaff.getId_work_shops() }">user> </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </td>
+
+        </td>
+        <td>!</td>
+    </tr>
+    </tbody>
+</table>
+
+<hr/>
+
+<a href="/staff/new">Create new person</a>
+<br/>
+<hr/>
+<a href="/staff/indexBusiness">Fill the result of the day</a>
+</body>
+</html>

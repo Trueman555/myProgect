@@ -3,6 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script language="javascript" type="text/javascript">
+        function goUrl(){
+            const url = document.forms.myForm.elements.usUrl.value;
+            window.location = url;
+        }
+    </script>
+    <style>
+        .b1 {
+            background: navy;
+            color: white;
+            font-size: 9pt;
+        }
+    </style>
 </head>
 <body>
 <table class = "staff" id = "staff_id">
@@ -16,6 +29,7 @@
     </thead>
     <tbody>
     <tr th:each="orgStaff : ${staff}">
+        <!--/*@thymesVar id="getStaff_id" type=""*/-->
         <td th:href="@{/staff/{staff_id}(staff_id=${orgStaff.getStaff_id()})}"
                th:text="${orgStaff.getNameSurname() }">user></td>
         <td>
@@ -63,16 +77,19 @@
 <a href="/staff/new">Create new person</a>
 <br/>
 <hr/>
+
+<a href="/staff/indexBusiness">Fill the result of the day</a>
 <!--/*@thymesVar id="orgStaff" type=""*/-->
-<a
-        th:href="@{/staff/{staff_id}
-        /show(staff_id=${orgStaff.getStaff_id()})}
-">Show person data
-<!--<label for="staff_id">Enter staff_id: </label>-->
-<!--<input type="text" th:field="*{staff_id}" id="staff_id"/>-->
-</a>
 <br/>
 <hr/>
-<a href="/staff/indexBusiness">Fill the result of the day</a>
+
+<form name="myForm">
+    <p>Enter in the field staff/employee number and press  the blue button <br>
+
+    </p>
+    <input type="text" name="usUrl"  value="">
+        <input type="button" class="b1" value="Go"name="go" onClick="goUrl()">
+</form>
+
 </body>
 </html>

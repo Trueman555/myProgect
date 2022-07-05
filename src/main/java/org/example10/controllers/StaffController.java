@@ -26,7 +26,7 @@ public class StaffController {
     @GetMapping()
     public String index(Model model) {
         model.addAttribute("staff", staffDao.index());
-        return "staff/index";
+        return "staff/index1";
     }
     @GetMapping("/indexBusiness")
     public String indexBusiness(Model model) {

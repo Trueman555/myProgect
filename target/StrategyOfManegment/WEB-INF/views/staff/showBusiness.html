@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Business</title>
+</head>
+
+<body>
+<p th:text="${'id_day: ' +dayBusiness.getId_day() }">VALUE</p>
+<p th:text="${'productsPerDay: ' + dayBusiness.getProductsPerDay()}">VALUE</p>
+
+
+<a th:href="@{/staff/indexBusiness/{id_day}/editBusiness(id_day=${dayBusiness.getId_day()})}">Edit</a>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New orgStaff</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/staff}" th:object="${orgStaff}">
+    <label for="nameSurname">Enter name: </label>
+    <input type="text" th:field="*{nameSurname}" id="nameSurname"/>
+
+    <br/>
+    <label for="experiance">Enter experiance: </label>
+    <input type="text" th:field="*{experiance}" id="experiance"/>
+
+    <br/>
+    <label for="id_posts">Enter post: </label>
+    <input type="text" th:field="*{id_posts}" id="id_posts"/>
+
+    <br/>
+    <label for="id_work_shops">Enter work_shop: </label>
+    <input type="text" th:field="*{id_work_shops}" id="id_work_shops"/>
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+
+</body>
+</html>

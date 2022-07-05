@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Businesses</title>
+</head>
+<body>
+<!--/*@thymesVar id="dayBusiness" type=""*/-->
+<!--<form th:method="GET" th:action="@{/staff/indexBusiness}" th:object="${dayBusiness}">-->
+<div th:each="dayBusiness : ${every_day_businesses}">
+
+    <a th:href="@{/staff/indexBusiness/{id_day}(id_day=${dayBusiness.getId_day()})}"
+       th:text="${dayBusiness.getId_day+ ', ' + dayBusiness.getProductsPerDay() }">user</a>
+</div>
+<!--</form>-->
+</body>
+</html>

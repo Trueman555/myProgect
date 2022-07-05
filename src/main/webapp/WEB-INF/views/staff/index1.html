@@ -63,6 +63,16 @@
 <a href="/staff/new">Create new person</a>
 <br/>
 <hr/>
+<!--/*@thymesVar id="orgStaff" type=""*/-->
+<a
+        th:href="@{/staff/{staff_id}
+        /show(staff_id=${orgStaff.getStaff_id()})}
+">Show person data
+<!--<label for="staff_id">Enter staff_id: </label>-->
+<!--<input type="text" th:field="*{staff_id}" id="staff_id"/>-->
+</a>
+<br/>
+<hr/>
 <a href="/staff/indexBusiness">Fill the result of the day</a>
 </body>
 </html>
